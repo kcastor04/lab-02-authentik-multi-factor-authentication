@@ -1,0 +1,587 @@
+{
+  "repository": "lab-02-authentik-multi-factor-authentication",
+  "status": "Client review",
+  "source": {
+    "title": "Hands-On IAM Labs - Lab 2: Setting Up Multi-Factor Authentication",
+    "author": "Andrew",
+    "organization": "All Things Identity",
+    "guide_version": "V11",
+    "target_version": "Authentik 2026.8",
+    "screens_captured_on": "Authentik 2026.8.5, November 2026",
+    "file_name": "eight.pdf",
+    "pages": 34,
+    "figures_in_source": 52,
+    "sha256": "14ab9ede392e68d7c5ca992aed68c7b1209422de5e81c214dcc394a022e57e1b"
+  },
+  "evidence_scope": "The package documents the supplied training guide. All screenshots are the guide author's example screenshots. Configuration and results are source-described, source-illustrated or expected; personal execution and successful outcomes have not been verified.",
+  "not_included": [
+    "Passwords, enrollment QR codes, TOTP secrets, one-time codes or backup codes",
+    "Server addresses (placeholders are used)",
+    "Test results, recovery outcomes or security metrics from the portfolio owner's environment",
+    "An emergency bypass, command-line recovery or break-glass procedure (not described by the guide)"
+  ],
+  "redactions_applied": [],
+  "redaction_summary": "Every one of the 52 figures was inspected individually for passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers and personal information. Screens that carry or could carry enrollment material (2.20, 2.21, 2.22, 2.26), backup codes (2.44), populated codes (2.29) or password entry (2.2, 2.17, 2.19) were excluded rather than redacted, so no redaction was needed. In the source, QR codes, codes, backup codes and IPs had already been replaced with placeholders by the author. Selected screenshots were re-encoded with Pillow, which drops PNG metadata chunks.",
+  "screenshots": [
+    {
+      "file": "assets/screenshots/step2-stage-list.png",
+      "source_pdf_page": 5,
+      "figure": "2.5",
+      "source_caption": "This is the MFA stage Authentik ships switched off. Click its Edit icon, zoomed here.",
+      "dimensions_px": [
+        1300,
+        499
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "51fee2be262693f935f0089246758346689cb899266f03ee63e160b57b11651d"
+    },
+    {
+      "file": "assets/screenshots/step2-force-configure.png",
+      "source_pdf_page": 6,
+      "figure": "2.6",
+      "source_caption": "This one setting is what turns MFA on. Users with no authenticator now have to enroll.",
+      "dimensions_px": [
+        1300,
+        940
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "5f5c041f9758e692442cefbb3f5ed8e9cf2d0a45893c051a0a15ef7639ba59cb"
+    },
+    {
+      "file": "assets/screenshots/step2-select-totp-setup.png",
+      "source_pdf_page": 6,
+      "figure": "2.7",
+      "source_caption": "Select the TOTP setup stage, then click the single arrow to move it across.",
+      "dimensions_px": [
+        1300,
+        940
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "b120d02e28d01c1543dfdb1c984487d457bd4c57b33610b7389a46e409db1019"
+    },
+    {
+      "file": "assets/screenshots/step2-finished-stage.png",
+      "source_pdf_page": 7,
+      "figure": "2.8",
+      "source_caption": "The finished stage. TOTP setup is selected and force-configure is on. All six device classes stay ticked.",
+      "dimensions_px": [
+        1300,
+        940
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "703d942e7da1053085bc76bbe2a8b73a2d04dc34d9727bb8ae862151a0840536"
+    },
+    {
+      "file": "assets/screenshots/step2-missing-stage-error.png",
+      "source_pdf_page": 8,
+      "figure": "2.9",
+      "source_caption": "If you see this, the TOTP setup stage didn't make it into Selected Stages. Move it across and save again.",
+      "dimensions_px": [
+        1300,
+        940
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "92100641455d593753d31459c460214fbcc95702ef4f0f0654f84f99438ac487"
+    },
+    {
+      "file": "assets/screenshots/step3-flows-list.png",
+      "source_pdf_page": 10,
+      "figure": "2.12",
+      "source_caption": "default-authentication-flow is the login every account uses.",
+      "dimensions_px": [
+        1300,
+        336
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "8ab2691823ece5f965b0bce0ede763ba26a8bee0befba412f8e1011412a57437"
+    },
+    {
+      "file": "assets/screenshots/step3-stage-bindings.png",
+      "source_pdf_page": 11,
+      "figure": "2.14",
+      "source_caption": "Four bindings: identify, password, MFA at order 30, then sign in. You don't add anything here.",
+      "dimensions_px": [
+        1300,
+        533
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "0b9268ba6c90224cc7fe1f5d2262791bf1679bcc2ea0b224f24b95c8e343006e"
+    },
+    {
+      "file": "assets/screenshots/step4-set-password-location.png",
+      "source_pdf_page": 13,
+      "figure": "2.16",
+      "source_caption": "Set password sits under Recovery. Without it the synced account can't sign in.",
+      "dimensions_px": [
+        1300,
+        617
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: User Overview page with the Set password button only; no password value or dialog. No credentials.",
+      "sha256": "fb66d488c40ea1c06c8c22306366c2c0d4d08277873e825328065ac827780065"
+    },
+    {
+      "file": "assets/screenshots/step4-user-device-list.png",
+      "source_pdf_page": 18,
+      "figure": "2.24",
+      "source_caption": "The user's new device, named TOTP Authenticator. Users can manage their own devices here.",
+      "dimensions_px": [
+        1300,
+        252
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Device name, type and example timestamps for a fictional lab user. No secrets.",
+      "sha256": "1220833827ee307d9601da92c24082fc08e88e8acdd62e0dfe5a5b8181a6f684"
+    },
+    {
+      "file": "assets/screenshots/step4-admin-device-list.png",
+      "source_pdf_page": 18,
+      "figure": "2.25",
+      "source_caption": "The same device from the admin side. This screen is your lockout recovery.",
+      "dimensions_px": [
+        1300,
+        499
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Device metadata (name, type, confirmed, timestamps) only. No secrets.",
+      "sha256": "7e17f5bfcc7f25418ed83352c18f4d5fc9015d62430709f0fbacb387ae91414f"
+    },
+    {
+      "file": "assets/screenshots/step5-sign-out.png",
+      "source_pdf_page": 20,
+      "figure": "2.27",
+      "source_caption": "Open the menu under your initials and click Sign out current user, so the next login starts fresh.",
+      "dimensions_px": [
+        1080,
+        420
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Shows the fictional lab account marc.spector and an example company.com address. No credentials.",
+      "sha256": "747cb7351ebb573b92fe490bf0f405d53a704a1dd6e885688e4f348789194274"
+    },
+    {
+      "file": "assets/screenshots/step5-totp-challenge.png",
+      "source_pdf_page": 20,
+      "figure": "2.28",
+      "source_caption": "This time there's no QR. The stage asks for a code from the device you already enrolled.",
+      "dimensions_px": [
+        1168,
+        912
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Ordinary code prompt with an empty field. No QR code, secret or code value.",
+      "sha256": "4773b5c97c787628806497610888ea91afacc88df69551ecb8af6eebc0966f24"
+    },
+    {
+      "file": "assets/screenshots/step5-signed-in.png",
+      "source_pdf_page": 21,
+      "figure": "2.30",
+      "source_caption": "MFA is working. A password alone no longer gets this user in.",
+      "dimensions_px": [
+        1300,
+        451
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "37fdb05640bd17e7be267352ed5d59ae582fb558848997534d3dace9a2205b22"
+    },
+    {
+      "file": "assets/screenshots/adv1-two-configuration-stages.png",
+      "source_pdf_page": 23,
+      "figure": "2.31",
+      "source_caption": "Two configuration stages means a new user gets to choose which one to enroll.",
+      "dimensions_px": [
+        1300,
+        940
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "918775a91df9afe329d05c12a0eb5981ba6d2232b09631880a5d7f146e83dc86"
+    },
+    {
+      "file": "assets/screenshots/adv1-webauthn-https-required.png",
+      "source_pdf_page": 23,
+      "figure": "2.32",
+      "source_caption": "This is what WebAuthn does on your lab's plain HTTP address. It needs HTTPS.",
+      "dimensions_px": [
+        1168,
+        1320
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: WebAuthn HTTPS error message only. No credentials.",
+      "sha256": "e127d997412e09ecc0e5dd839e6181c3165a49242303cfd2e08a630f10b8e00d"
+    },
+    {
+      "file": "assets/screenshots/adv2-new-group.png",
+      "source_pdf_page": 25,
+      "figure": "2.34",
+      "source_caption": "Name the group exactly as the policy will spell it.",
+      "dimensions_px": [
+        1300,
+        925
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "9a9f5c235f85b86d84cfccd514022ee3ef1d4f15a0b1249a8095f037d4e69a10"
+    },
+    {
+      "file": "assets/screenshots/adv2-expression-policy.png",
+      "source_pdf_page": 26,
+      "figure": "2.38",
+      "source_caption": "This returns true only for members of MFA Required Users.",
+      "dimensions_px": [
+        1300,
+        925
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Policy name and group-membership expression only. No secrets.",
+      "sha256": "70372424a2e4ce5d5d4809811803dcef6dc555afa3499d38a1e0ec18a0d360ba"
+    },
+    {
+      "file": "assets/screenshots/adv2-order30-binding.png",
+      "source_pdf_page": 27,
+      "figure": "2.39",
+      "source_caption": "Expand the order-30 binding and click its own Create or bind, the one inside the row.",
+      "dimensions_px": [
+        1300,
+        905
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "56bead4ea0114ed87467d6a6505473eaa27d0dce2e624ee7535f29e6fb530588"
+    },
+    {
+      "file": "assets/screenshots/adv2-bind-existing-policy.png",
+      "source_pdf_page": 27,
+      "figure": "2.40",
+      "source_caption": "Choose Bind an existing policy, then pick mfa-required-users. A policy that isn't bound does nothing.",
+      "dimensions_px": [
+        1300,
+        925
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "cf87d128e1e36d9c9837bbf70d63e04b866416f163e1fce024449b57730fcd0a"
+    },
+    {
+      "file": "assets/screenshots/adv2-policy-engine-all.png",
+      "source_pdf_page": 28,
+      "figure": "2.41",
+      "source_caption": "Set the mode to ALL. On ANY, the policy Authentik already put here passes for everyone.",
+      "dimensions_px": [
+        1300,
+        925
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "280bcc94dbe7805e72371437cd24c860b0353426eb4a2dea625e76ea6f58a5de"
+    },
+    {
+      "file": "assets/screenshots/adv3-enroll-static-tokens.png",
+      "source_pdf_page": 29,
+      "figure": "2.43",
+      "source_caption": "Backup codes come from the stage Authentik already ships. Each user enrolls their own.",
+      "dimensions_px": [
+        1300,
+        404
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "20fa8043b03e56869d2b5a15f724b174d592dd6b85378cff3a0a38af1f1fb0bb"
+    },
+    {
+      "file": "assets/screenshots/adv3-user-devices-both.png",
+      "source_pdf_page": 30,
+      "figure": "2.45",
+      "source_caption": "Now there's a backup if the phone goes missing.",
+      "dimensions_px": [
+        1300,
+        315
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Reviewed individually: configuration or list view only; no passwords, QR codes, TOTP secrets, one-time codes, backup codes, tokens, session identifiers or personal information. Account names are fictional lab accounts.",
+      "sha256": "9ed7d278cd3b083208a57344675800af7a94bd2b361cd5e1e2d35530ceb2769a"
+    },
+    {
+      "file": "assets/screenshots/adv3-method-choice.png",
+      "source_pdf_page": 30,
+      "figure": "2.46",
+      "source_caption": "Once a user holds both, the login asks which to use. Traditional authenticator is the app. Recovery keys are the backup codes.",
+      "dimensions_px": [
+        1168,
+        1080
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Authentication-method choice screen only; no codes are displayed.",
+      "sha256": "e8a1077589c3635439c2ce75a00166a0a78e377cdc701054f4022e7e4b4cbbeb"
+    },
+    {
+      "file": "assets/screenshots/part3-admin-device-list.png",
+      "source_pdf_page": 32,
+      "figure": "2.48",
+      "source_caption": "Each enrolled device, with when it was created and last used.",
+      "dimensions_px": [
+        1300,
+        487
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Device metadata for a static token and a TOTP device; the static token's codes are not shown.",
+      "sha256": "c355a3225e73ab53acadbca1833615a53d03b7ec58f75c3ff640c45ad0cfd907"
+    },
+    {
+      "file": "assets/screenshots/part3-delete-lost-device.png",
+      "source_pdf_page": 32,
+      "figure": "2.49",
+      "source_caption": "Tick a lost device and click Delete, then confirm. The user re-enrolls at their next login.",
+      "dimensions_px": [
+        1300,
+        487
+      ],
+      "cropping": "None. Embedded image extracted at native resolution; aspect ratio preserved.",
+      "redaction": "None required.",
+      "sensitivity_decision": "Included: Device list with selection checkboxes; no codes are shown.",
+      "sha256": "20e9785dbb0422700e06209b1353282ba29438b62aa1397391587404757bd2fb"
+    }
+  ],
+  "excluded_figures": [
+    {
+      "figure": "2.1",
+      "source_pdf_page": 2,
+      "source_caption": "Sign in as akadmin. This is the same login flow you're about to add MFA to.",
+      "reason": "Not used: empty login form for akadmin; no MFA evidence."
+    },
+    {
+      "figure": "2.2",
+      "source_pdf_page": 3,
+      "source_caption": "Enter the Authentik password from your Lab Access Email.",
+      "reason": "Excluded by policy: password-entry screen (field empty). No evidence need."
+    },
+    {
+      "figure": "2.3",
+      "source_pdf_page": 3,
+      "source_caption": "You're in the admin dashboard. Every change in this lab starts here.",
+      "reason": "Not used: admin dashboard; no MFA evidence. Shows a recent-events panel with client IP already masked by the source author."
+    },
+    {
+      "figure": "2.4",
+      "source_pdf_page": 5,
+      "source_caption": "Stages live under Flows and Stages. You're editing one that already exists.",
+      "reason": "Not used: sidebar navigation to Stages."
+    },
+    {
+      "figure": "2.10",
+      "source_pdf_page": 8,
+      "source_caption": "Save. From the next login on, everyone without an authenticator gets enrolled, akadmin included.",
+      "reason": "Not used: near-duplicate of Figure 2.8 with the Save button highlighted."
+    },
+    {
+      "figure": "2.11",
+      "source_pdf_page": 10,
+      "source_caption": "Now check where that stage sits in the login flow.",
+      "reason": "Not used: sidebar navigation to Flows."
+    },
+    {
+      "figure": "2.13",
+      "source_pdf_page": 11,
+      "source_caption": "Stage Bindings shows the order Authentik runs each step of the login.",
+      "reason": "Not used: Flow Overview tab; Figure 2.14 shows the bindings that matter."
+    },
+    {
+      "figure": "2.15",
+      "source_pdf_page": 13,
+      "source_caption": "Pick a test user from the Lab 1 sync. They have no password yet.",
+      "reason": "Not used: user list navigation. Lists account names including one that may belong to the guide author; not needed for evidence."
+    },
+    {
+      "figure": "2.17",
+      "source_pdf_page": 14,
+      "source_caption": "Give the test user a password you'll remember for the next step.",
+      "reason": "Excluded by policy: password-setting dialog (field empty). No evidence need."
+    },
+    {
+      "figure": "2.18",
+      "source_pdf_page": 14,
+      "source_caption": "Sign in as the test user in a private window, not as akadmin.",
+      "reason": "Not used: login screen with a fictional username; no MFA evidence."
+    },
+    {
+      "figure": "2.19",
+      "source_pdf_page": 14,
+      "source_caption": "Same login as always, so far.",
+      "reason": "Excluded by policy: password-entry screen (field empty). No evidence need."
+    },
+    {
+      "figure": "2.20",
+      "source_pdf_page": 15,
+      "source_caption": "You didn't navigate here. The MFA stage found no device and dropped you into TOTP setup.",
+      "reason": "Excluded by policy: TOTP enrollment screen. The source author replaced the QR code with a placeholder, but the screen also offers Copy TOTP Config / Copy Secret; enrollment material is excluded."
+    },
+    {
+      "figure": "2.21",
+      "source_pdf_page": 16,
+      "source_caption": "Can't scan? Copy Secret gives you the key to type into your app by hand.",
+      "reason": "Excluded by policy: TOTP enrollment screen highlighting Copy Secret (setup secret); QR shown as a source placeholder."
+    },
+    {
+      "figure": "2.22",
+      "source_pdf_page": 17,
+      "source_caption": "Type the six digits your app shows right now and click Continue, just below this field.",
+      "reason": "Excluded by policy: TOTP enrollment screen with the code field populated by a source placeholder."
+    },
+    {
+      "figure": "2.23",
+      "source_pdf_page": 17,
+      "source_caption": "Signed in. Enrollment happened inside the login, not after it.",
+      "reason": "Not used: byte-identical to Figure 2.30 (signed-in user interface); Figure 2.30 is used."
+    },
+    {
+      "figure": "2.26",
+      "source_pdf_page": 19,
+      "source_caption": "Code does not match usually means the phone's clock has drifted. Turn on automatic time and try the next code.",
+      "reason": "Excluded by policy: error screen during TOTP enrollment (QR placeholder and populated code placeholder). The clock-drift guidance is described in text instead."
+    },
+    {
+      "figure": "2.29",
+      "source_pdf_page": 20,
+      "source_caption": "Enter the current code from your app.",
+      "reason": "Excluded by policy: code-entry screen with a populated (placeholder) code; Figure 2.28 shows the same challenge with an empty field."
+    },
+    {
+      "figure": "2.33",
+      "source_pdf_page": 24,
+      "source_caption": "Optional. A group decides who gets the MFA prompt.",
+      "reason": "Not used: groups list navigation."
+    },
+    {
+      "figure": "2.35",
+      "source_pdf_page": 25,
+      "source_caption": "Add your test users to the group.",
+      "reason": "Not used: empty group Users tab."
+    },
+    {
+      "figure": "2.36",
+      "source_pdf_page": 25,
+      "source_caption": "Policies sit under Customization. Click New Policy.",
+      "reason": "Not used: policies list navigation."
+    },
+    {
+      "figure": "2.37",
+      "source_pdf_page": 26,
+      "source_caption": "Pick Expression Policy and the form opens.",
+      "reason": "Not used: empty policy form; Figure 2.38 shows the completed policy."
+    },
+    {
+      "figure": "2.42",
+      "source_pdf_page": 28,
+      "source_caption": "A user outside the group skips MFA. Members still get the prompt.",
+      "reason": "Not used: shows only the generic signed-in dashboard (visually the same as Figure 2.30), so it does not demonstrate the member/non-member difference by itself."
+    },
+    {
+      "figure": "2.44",
+      "source_pdf_page": 29,
+      "source_caption": "Save these somewhere safe. Each code works once.",
+      "reason": "Excluded by policy: backup-code display. Codes already replaced by source placeholders, but backup-code screens are excluded."
+    },
+    {
+      "figure": "2.47",
+      "source_pdf_page": 31,
+      "source_caption": "As admin, every user's devices are under Credentials / Tokens.",
+      "reason": "Not used: admin Credentials / Tokens navigation; the visible table is the Sessions list (last IP masked by the source author), not the MFA device list shown in Figure 2.48."
+    },
+    {
+      "figure": "2.50",
+      "source_pdf_page": 33,
+      "source_caption": "Users manage their own devices from Settings.",
+      "reason": "Not used: Settings gear navigation."
+    },
+    {
+      "figure": "2.51",
+      "source_pdf_page": 33,
+      "source_caption": "On 2026.8, MFA devices sit under Credentials.",
+      "reason": "Not used: user details page navigation (fictional name and example email)."
+    },
+    {
+      "figure": "2.52",
+      "source_pdf_page": 33,
+      "source_caption": "From here a user can add a device with Enroll or remove one they no longer have.",
+      "reason": "Not used: near-duplicate of Figure 2.24; differs only by the Enroll highlight."
+    }
+  ],
+  "limitations": [
+    "Personal completion of the lab and of any optional scenario is not verified.",
+    "WebAuthn cannot be completed on the guide's plain HTTP lab; no WebAuthn result exists.",
+    "The NIST SP 800-63B-4 statements (SMS restricted, email not for out-of-band, OTP not phishing-resistant) are attributed to the guide and were not independently verified against the standard.",
+    "Lost-device re-enrollment depends on the user remaining in scope of the force-configure validation stage.",
+    "Admin self-recovery after losing the only factor is not possible from the browser; the guide offers backup codes as a mitigation and describes no break-glass procedure.",
+    "Prerequisites from Lab 0 and Lab 1 (instance setup, synced accounts) are assumed, not verified.",
+    "Figure 2.42 does not visually distinguish member and non-member results; conditional-MFA behavior is source-described."
+  ],
+  "diagrams": [
+    {
+      "file": "assets/project-banner.png",
+      "type": "Banner",
+      "content": "Lab title with an identify / password / MFA check / sign-in motif and an enrollment branch.",
+      "method": "Generated deterministically with Python/Pillow (_build/diagrams.py; no AI artwork).",
+      "sha256": "7a256003d9cb1fff1c3b99253ef4db68005fb46c29dc45ee818cf00c02574aa3"
+    },
+    {
+      "file": "assets/architecture.png",
+      "type": "Architecture diagram (image export)",
+      "exported_from": "README.md, first mermaid block (the editable source)",
+      "method": "Rendered from the README Mermaid source with Mermaid 11.17.2 in headless Chrome at 2x scale (_build/export_diagrams.py).",
+      "sha256": "5065e5e84582fbb75e31eb5fe3c50a45adc9af0dd48fb36a42bf4f11b583ab8a"
+    },
+    {
+      "file": "assets/workflow.png",
+      "type": "Workflow diagram (image export)",
+      "exported_from": "README.md, second mermaid block (the editable source)",
+      "method": "Rendered from the README Mermaid source with Mermaid 11.17.2 in headless Chrome at 2x scale (_build/export_diagrams.py).",
+      "sha256": "9d34ce7b65a5d6af047b5577ecb3346429e537ae4b4f907e4d324ea4b5a48e3d"
+    }
+  ],
+  "mermaid_diagrams": [
+    {
+      "location": "README.md, Architecture / Workflow section (first mermaid block)",
+      "type": "Architecture diagram",
+      "content": "Separate test-user and admin sessions; the shared default-authentication-flow (orders 10, 20, 30, 100); the existing MFA validation stage; TOTP setup for users without a device; the authenticator app with setup (secret shared once) distinguished from code validation; device administration and the admin's dependency on the same flow.",
+      "method": "Mermaid flowchart written as text in README.md; rendered natively by GitHub and editable as text."
+    },
+    {
+      "location": "README.md, Architecture / Workflow section (second mermaid block)",
+      "type": "Workflow diagram",
+      "content": "Identify, password, MFA validation; enforced TOTP enrollment when no device; challenge for an enrolled device; retry on a rejected code; login. Optional scenarios and recovery shown separately.",
+      "method": "Mermaid flowchart written as text in README.md; rendered natively by GitHub and editable as text."
+    }
+  ]
+}
